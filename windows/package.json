@@ -1,0 +1,17 @@
+{
+  "name": "castpro-windows",
+  "productName": "CastPro",
+  "version": "1.0.0",
+  "description": "CastPro sender for Windows",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win portable --x64 --publish never" },
+  "dependencies": { "bonjour-service": "^1.2.1", "ffprobe-static": "^3.1.0" },
+  "devDependencies": { "electron": "^33.2.0", "electron-builder": "^25.1.8" },
+  "build": {
+    "appId": "com.castpro.windows",
+    "productName": "CastPro",
+    "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css", "node_modules/**/*"],
+    "asarUnpack": ["node_modules/ffprobe-static/**"],
+    "win": { "target": "portable" }
+  }
+}
